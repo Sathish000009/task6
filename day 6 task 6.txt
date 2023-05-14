@@ -1,0 +1,90 @@
+  1. a) Write a constructor for the class Movie, which takes a String representing the title of the movie, 
+ a String representing the studio, and a String representing the rating as its arguments, and sets the  respective class properties to these values.
+
+class movie {
+  constructor(title, studio, rating) {
+    this.title = title;
+    this.studio = studio;
+    this.rating = rating;
+  }
+
+  getrating() {
+    return "the rating is  " + this.rating;
+  }
+}
+
+
+  b) The constructor for the class Movie will set the class property rating to "PG" as default when no rating is provided.
+ 
+class movie {
+    constructor(title, studio, rating){
+        this.title = title;
+        this.studio = studio;
+        this.rating = "PG";
+    }
+}
+   c) Write a method getPG, which takes an array of base type Movie as its argument,
+and returns a new array of only those movies in the input array with a rating of "PG".
+You may assume the input array is full of Movie instances. The returned array need
+not be full 
+ public static Movie[] getPG(Movie[] mov) {
+ Movie[] pgMov = new Movie[mov.length];
+ int newArrayIndex = 0;
+ for (int i = 0; i < mov.length; i++) {
+ if (mov[i].rating.equals(“PG”)) {
+ pgMov[newArrayIndex] = mov[i];
+ newArrayIndex++;
+ }
+ }
+ return pgMov;
+}
+
+   d) Write a piece of code that creates an instance of the class Movie with the title “Casino Royale”,
+  the studio “Eon Productions”, and the rating “PG­13”
+
+const CasinoRoyale = new movie( "Casino Royal", "Eon Productions", "PG13");
+
+
+3.Write a "person" class to hold all the details. 
+
+class person{
+        constructor(name,id){
+            this.name = name;
+            this.id = id;
+        }
+        add_Address(add){
+            this.add = add;
+        }
+        getDetails(){
+            console.log(`Name is ${this.name},
+            Address is: ${this.add}`);
+        }
+    }
+      
+    let person1 = new person('sathish',25);
+    person1.add_Address('thanjavur');
+    person1.getDetails();
+
+ 4.Write a class to calculate the uber price.
+
+  let baseFee = .44
+let cities = ["Thanjavur", "kumbakonam", "india", ]
+let uberRates = [5, 10, 15]
+let customerName = "sathish" 
+let customerCity = "Thanjavur" 
+
+console.log("Hello", customerName+ ", welcome to the Uber Rate Program")
+
+function getRate(customerCity) {
+  
+  function uberRate(customerCity, index) {
+    
+    let finalRate = (uberRates[index]) * baseFee
+    return finalRate
+  }
+  
+  console.log(customerCity, "rate is:", uberRate(customerCity, cities.indexOf(customerCity)))
+}
+
+getRate(customerCity)
+
